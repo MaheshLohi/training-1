@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: #fff;
+    height: 80px;
+    padding-top: 16px;
+}
+
+.logo{
+    margin-left: 20px;
+}
+
+.links{
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.links a{
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0px 10px;
+    font-weight: bold;
+}
+
+.login{
+    color: #247fe4;
+}
+
+
+
+
+.signup{
+    border-radius: 30px;
+    color: white;
+    background-color: #247fe4;
+    padding: 12px 25px;
+
+}
