@@ -13,8 +13,9 @@
             <img src="https://npci-qa.open.money/assets/images/nfinite_logo@1.5x.svg" alt="">
         </div>
         <div class="links">
-            <a href="" class="login">Login</a>
-            <a href="" class="signup">Signup</a>
+            <a href="/login" class="login">Login</a>
+            <a href="/signup" class="signup">Signup</a>
+
         </div>
     </header>
 </body>
