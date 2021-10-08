@@ -2,15 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\UserRepo;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function signup(){
+    public $userObj;
+    public function __construct(UserRepo $userObj)
+    {
+        $this->userObj = $userObj;
+    }
+
+
+    public function signup()
+    {
         return view('signup');
     }
-    public function login(){
+    public function login()
+    {
         return view('login');
     }
 
+
+
+    public function saveUser()
+    {
+
+
+        $name = request('name');
+        $emailId = request('emailId');
+        $password = request('password');
+        $phone = request('phone');
+        $organization = request('organization');
+        $this->userObj->saveData($name, $emailId, $phone, $organization, $password);
+
+        //return redirect('/')->with('mssg', 'you are sign in');
+    }
 }
