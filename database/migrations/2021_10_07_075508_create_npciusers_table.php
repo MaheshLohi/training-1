@@ -13,6 +13,8 @@ class CreateNpciusersTable extends Migration
      */
     public function up()
     {
+
+        
         Schema::create('npciusers', function(Blueprint $table)
         { 
             $table->bigIncrements('id');
@@ -20,7 +22,7 @@ class CreateNpciusersTable extends Migration
             $table->string('username');
             $table->string('organisation');
             $table->string('email');
-            $table->string('phone');
+            $table->integer('phone');
             $table->string('password');
             
             
