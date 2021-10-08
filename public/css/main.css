@@ -1,47 +1,112 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    background-color: #fff;
-    height: 80px;
-    padding-top: 16px;
+body {
+  background: lightgray;
 }
 
-.logo{
-    margin-left: 40px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  height: 80px;
+  padding-top: 16px;
 }
 
-.links{
-    padding: 16px;
-    margin-right: 20px;
+.logo {
+  margin-left: 40px;
 }
 
-.links a{
-    text-decoration: none;
-    font-size: 14px;
-    margin: 0px 10px;
-    font-weight: bold;
+.links {
+  padding: 16px;
+  margin-right: 20px;
 }
 
-.login{
-    color: #247fe4;
+.links a {
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0px 10px;
+  font-weight: bold;
 }
 
+.login {
+  color: #247fe4;
+}
 
+.signup {
+  border-radius: 30px;
+  color: white;
+  background-color: #247fe4;
+  padding: 12px 25px;
+}
 
+.content {
+  margin: auto;
+  margin-top: 20vh;
+  width: 90%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-row-gap: 20px;
+}
 
-.signup{
-    border-radius: 30px;
-    color: white;
-    background-color: #247fe4;
-    padding: 12px 25px;
+.product-category {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2); /*any color you want*/
+  width: 300px;
+  background-color: #f9f7f7;
+  border-radius: 20px;
+  position: relative;
+}
 
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.top a {
+  text-decoration: none;
+  color: #247fe4;
+  font-weight: bold;
+}
+
+.middle {
+  margin: 20px 0;
+  padding: 15px;
+}
+
+h2,
+h3 {
+  padding: 2px;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #247fe4;
+  padding: 16px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.bottom a {
+  text-decoration: none;
+  color: white;
 }
