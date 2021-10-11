@@ -21,8 +21,8 @@ class CreateNpciusersTable extends Migration
             $table->timestamps();
             $table->string('username');
             $table->string('organisation');
-            $table->string('email');
-            $table->integer('phone');
+            $table->string('email')->unique();
+            $table->string('phone')->unique();
             $table->string('password');
             
             

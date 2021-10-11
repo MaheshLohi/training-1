@@ -18,7 +18,7 @@ class UserRepo
     public function saveData($name, $email, $phone, $organisation, $password)
     {
 
-        $this->userObject->name = $name;
+        $this->userObject->username = $name;
         $this->userObject->email = $email;
         $this->userObject->phone = $phone;
         $this->userObject->organisation = $organisation;
@@ -26,3 +26,4 @@ class UserRepo
         $this->userObject->save();
     }
 }
+
