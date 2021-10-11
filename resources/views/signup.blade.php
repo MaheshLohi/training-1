@@ -16,32 +16,41 @@
     </div> -->
     <div class="mainBody">
         <h1>Create Account</h1>
+
         <form id="SignUp" class="register" method="POST">
             {{csrf_field()}}
             <div class="name">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name">
+
             </div>
+
+            <span class="error">{{$errors->first('name')}}</span>
             <div class="email">
                 <label for="email">Email Id</label>
                 <input type="text" name="emailId" id="emailId">
             </div>
+            <span class="error">{{$errors->first('emailId')}}</span>
             <div class="password">
                 <label for="password">Password</label>
-                <input type="text" name="password" id="password">
+                <input type="password" name="password" id="password">
             </div>
+            <span class="error">{{$errors->first('password')}}</span>
             <div class="confirmPass">
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="text" id="confirmpassord">
+                <input type="password" name="password_confirmation" id="password_confirmation">
             </div>
+            <span class="error">{{$errors->first('name')}}</span>
             <div class="Org">
                 <label for="organization"> Organization</label>
                 <input type="text" name="organization" id="organization">
             </div>
+            <span class="error">{{$errors->first('organization')}}</span>
             <div class="Phone">
                 <label for="Phone.No">Phone Number</label>
-                <input type="number" name="phone" id="phone">
+                <input type="number" name="phone" id="phone" maxlength="10"  >
             </div>
+            <span class="error">{{$errors->first('phone')}}</span>
             <div class="button">
                 <button type="submit" class="Button">Submit</button>
             </div>
