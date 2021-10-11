@@ -15,3 +15,4 @@ Route::get('/','ApiController@listApi');
 Route::get('/signup', 'UserController@signup');
 Route::get('/login', 'UserController@login');
 Route::post('/signup','UserController@saveUser');
+Route::get('/{uuid}','DetailsController@viewDetails');

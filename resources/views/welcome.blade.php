@@ -30,7 +30,7 @@
         <div class="product-category">
             <div class="top">
                 <img height="20" width="50" src="{{$item['image']}}" alt="logo">
-                <a href="">Detail</a>
+                <a href="{{$item['uuid']}}">Detail</a>
 
             </div>
             <div class="middle">

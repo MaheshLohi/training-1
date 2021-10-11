@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Repository\UserRepo;
-
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -24,12 +23,8 @@ class UserController extends Controller
         return view('login');
     }
 
-
-
     public function saveUser()
     {
-
-
         $name = request('name');
         $emailId = request('emailId');
         $password = request('password');
