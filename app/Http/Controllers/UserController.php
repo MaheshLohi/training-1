@@ -26,9 +26,17 @@ class UserController extends Controller
 
 
 
-    public function saveUser()
+    public function saveUser(Request $req)
     {
 
+        $this->validate($req, [
+            'name' => 'required',
+            'emailId' => 'required|email',
+            'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+            'password_confirmation' => 'min:6',
+            'phone' => 'required|min:10|max:10',
+            'organization' => 'required'
+        ]);
 
         $name = request('name');
         $emailId = request('emailId');
@@ -37,6 +45,6 @@ class UserController extends Controller
         $organization = request('organization');
         $this->userObj->saveData($name, $emailId, $phone, $organization, $password);
 
-        //return redirect('/')->with('mssg', 'you are sign in');
+        return redirect('/')->with('message', 'User Registration successful');
     }
 }

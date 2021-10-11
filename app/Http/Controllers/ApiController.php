@@ -20,6 +20,7 @@ class ApiController extends Controller
     {
         $apiData = $this->apiCall->getApiData();
         //print_r($apiData['data']);
-        return view('welcome', ['productList' => $apiData['data']]);
+        if($apiData)return view('welcome', ['productList' => $apiData['data']]);
+        else abort(404);
     }
 }
