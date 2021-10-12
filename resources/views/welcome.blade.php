@@ -23,6 +23,7 @@
 
 
     </div>
+
     <div class="content">
         @foreach($productList as $item)
 
@@ -36,7 +37,7 @@
             <div class="middle">
                 <h2>{{$item['name']}}</h2>
                 <h3>By {{$item['provider_name']}}</h3>
-              
+
 
             </div>
             <div class="bottom">
@@ -50,7 +51,13 @@
 
     </div>
 
-
+    <script>
+        var msg = "{{Session::get('message')}}"
+        var exist = "{{Session::has('message')}}"
+        if (exist) {
+            alert(msg);
+        }
+    </script>
 
 </body>
 

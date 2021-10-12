@@ -23,6 +23,10 @@ body {
   padding-top: 16px;
 }
 
+p {
+  margin-top: 20px;
+}
+
 .logo {
   margin-left: 40px;
 }
@@ -106,10 +110,13 @@ h3 {
   bottom: 0;
 }
 
-
 .bottom a {
   text-decoration: none;
   color: white;
-
 }
 
+.error {
+  margin-left: 20px;
+  color: red;
+  font-weight: bold;
+}

@@ -52,6 +52,7 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+    'base_url' => env('BASE_URL', "https://npci-qa-api.open.money/api/consumer/get-catalogue-details?catalogue_id="),
 
     /*
     |--------------------------------------------------------------------------
