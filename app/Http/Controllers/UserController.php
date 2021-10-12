@@ -31,7 +31,7 @@ class UserController extends Controller
 
         $this->validate($req, [
             'name' => 'required',
-            'emailId' => 'required|email',
+            'email_id' => 'required|email',
             'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
             'password_confirmation' => 'min:6',
             'phone' => 'required|min:10|max:10',
@@ -39,7 +39,7 @@ class UserController extends Controller
         ]);
 
         $name = request('name');
-        $emailId = request('emailId');
+        $emailId = request('email_id');
         $password = request('password');
         $phone = request('phone');
         $organization = request('organization');
