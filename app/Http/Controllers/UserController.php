@@ -47,4 +47,10 @@ class UserController extends Controller
 
         return redirect('/')->with('message', 'User Registration successful');
     }
+
+    public function details()
+    {
+        return view('details');
+    }
+
 }
