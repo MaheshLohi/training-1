@@ -7,7 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-
-
+   
+    @foreach($productDetails as $item)
+        <h2>{{$item['name']}}</h2>
+        <h3>By {{$item['provider_name']}}</h3>
+        <p>{{$item['about_us']}}</p>
+    @endforeach
 </body>
 </html>

@@ -17,8 +17,6 @@ class DetailsController extends Controller
     public function viewDetails($uuid)
     {
         $apiData = $this->apiCall->getDetails($uuid);
-        print_r($apiData['data']);
-        
-        //return view('details',['detailsdata' => $apiData['data']]);
+        return view('details',['productDetails' => $apiData['data']]);
     }
 }
