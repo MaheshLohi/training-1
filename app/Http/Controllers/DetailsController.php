@@ -17,6 +17,12 @@ class DetailsController extends Controller
     public function viewDetails($uuid)
     {
         $apiData = $this->apiCall->getDetails($uuid);
-        return view('details',['productDetails' => $apiData['data']]);
+
+        if($apiData['data']){
+            return view('ApiBazzar',['item' => $apiData['data'][0]]);
+        }
+        else{
+            return view('ApiBazzar',['message'=>"No data found"]); 
+        }
     }
-}
+} 
