@@ -20,5 +20,8 @@ Route::get('/','ApiController@listApi');
 Route::get('/signup', 'UserController@signup');
 Route::get('/login', 'UserController@login');
 Route::post('/signup','UserController@saveUser');
-Route::post('/details','UserController@details');
+
 Route::post('/login','LoginController@login');
+
+Route::get('/{uuid}','DetailsController@viewDetails');
+

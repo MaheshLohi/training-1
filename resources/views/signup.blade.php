@@ -28,7 +28,7 @@
             <span class="error">{{$errors->first('name')}}</span>
             <div class="email">
                 <label for="email">Email Id</label>
-                <input type="text" name="emailId" id="emailId">
+                <input type="text" name="email_id" id="email_id">
             </div>
             <span class="error">{{$errors->first('emailId')}}</span>
             <div class="password">
