@@ -11,8 +11,17 @@
 |
 */
 
+use App\Http\Controllers\UserController;
+// use Symfony\Component\Routing\Route;
+
+// use Illuminate\Routing\Route;
+
 Route::get('/','ApiController@listApi');
 Route::get('/signup', 'UserController@signup');
 Route::get('/login', 'UserController@login');
 Route::post('/signup','UserController@saveUser');
+
+Route::post('/login','LoginController@login');
+
 Route::get('/{uuid}','DetailsController@viewDetails');
+

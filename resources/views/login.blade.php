@@ -10,8 +10,8 @@
 <body>
     <h1>Login</h1>
     <div class="container">
-     <form id="Login" class="loginBox" method="GET">
-
+     <form id="Login" class="loginBox" method="POST">
+     {{csrf_field()}}
        <div class="name">
           <label for="name">UserName</label>
           <input  type="text" id="name">
@@ -20,8 +20,7 @@
           <label for="password">Password</label>
           <input type="text" id="password">
       </div>
-
-       <div class="button"> 
+       <div class="button">
            <button type="submit" class="Button">Login</button>
        </div>
      </form>
