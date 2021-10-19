@@ -8,7 +8,7 @@ class LoginServices
     public function loginApi()
     {
         $ch = curl_init();
-        $url = 'https://npci-qa-api.open.money/api/consumer/login';
+        $url =  config('global.base_url') . 'login';
 
         $data = array("email" => "anandhuks0@gmail.com", "password" => array(
             "ct" => "zyeib3uuUnTqR3Zf1oL3vg==",     "iv" => "42925de56071ba11bb984cc8bfbcf350",    "s" => "3b914d6469e30320"
@@ -25,5 +25,16 @@ class LoginServices
         curl_close($ch);
         // print_r($result);
         return json_decode($result);
+    }
+
+
+    public function logoutApi($email, $token)
+    {
+        $ch = curl_init();
+        $url = config('global.base_url') . "logout?email=$email&Authorization=$token";
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = json_decode(curl_exec($ch), true);
+        return $response['message'];
     }
 }

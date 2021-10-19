@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\ListProducts;
-
+use Exception;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -14,13 +14,18 @@ class ApiController extends Controller
     {
         $this->apiCall = $apiCall;
     }
-    //
+    
 
     public function listApi()
     {
         $apiData = $this->apiCall->getApiData();
-        //print_r($apiData['data']);
-        if($apiData)return view('welcome', ['productList' => $apiData['data']]);
-        else abort(404);
+        try{
+            
+                return view('welcome', ['productList' => $apiData['data']]);
+            
+        }
+        catch(Exception $e){
+            return view("error",["error"=>$apiData]);
+        }
     }
 }

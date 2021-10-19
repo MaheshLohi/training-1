@@ -21,14 +21,14 @@
             {{csrf_field()}}
             <div class="name">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" value="{{  old('name') }}" >
 
             </div>
 
             <span class="error">{{$errors->first('name')}}</span>
             <div class="email">
                 <label for="email">Email Id</label>
-                <input type="text" name="email_id" id="email_id">
+                <input type="text" name="email_id" id="email_id"  value="{{  old('email_id') }}" >
             </div>
             <span class="error">{{$errors->first('emailId')}}</span>
             <div class="password">
@@ -43,12 +43,12 @@
             <span class="error">{{$errors->first('name')}}</span>
             <div class="Org">
                 <label for="organization"> Organization</label>
-                <input type="text" name="organization" id="organization">
+                <input type="text" name="organization" id="organization"  value="{{  old('organization') }}" >
             </div>
             <span class="error">{{$errors->first('organization')}}</span>
             <div class="Phone">
                 <label for="Phone.No">Phone Number</label>
-                <input type="number" name="phone" id="phone" maxlength="10"  >
+                <input type="number" name="phone" id="phone"  value="{{  old('phone') }}" >
             </div>
             <span class="error">{{$errors->first('phone')}}</span>
             <div class="button">

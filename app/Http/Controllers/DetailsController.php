@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\ViewDetails;
 use Illuminate\Http\Request;
-use Ramsey\Uuid\Uuid;
+use App\Services\ViewDetails;
 
 class DetailsController extends Controller
 {
     //
+
+
+    
     public $apiCall;
     public function __construct(ViewDetails $apiCall)
     {
@@ -17,12 +19,8 @@ class DetailsController extends Controller
     public function viewDetails($uuid)
     {
         $apiData = $this->apiCall->getDetails($uuid);
-
         if($apiData['data']){
-            return view('ApiBazzar',['item' => $apiData['data'][0]]);
-        }
-        else{
-            return view('ApiBazzar',['message'=>"No data found"]); 
-        }
+            return view('ApiBazzar',['item'=>$apiData['data'][0]]);
+        }return view('ApiBazzar',['message'=>"No data found"]);
     }
-} 
+}
