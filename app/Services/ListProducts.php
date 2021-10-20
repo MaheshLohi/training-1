@@ -3,20 +3,23 @@
 
 namespace App\Services;
 
+use ApiHelpers;
+
 class ListProducts
 {
 
+    public $apiHelper;
+    public function __construct(ApiHelpers $apiHelper)
+    {
+        $this->apiHelper = $apiHelper;
+    }
+
     public function getApiData()
     {
-        $ch = curl_init();
         $url = config("global.base_url") . config('global.catalogue_endpoint');
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, '');
-        $response = json_decode(curl_exec($ch), true);
-        if (!curl_error($ch)) {
-            return $response;
-        } else return curl_error($ch);
+        $header = array('Content-Type: application/json');
+
+        
+        return $this->apiHelper->postCall($url, $header, '');
     }
 }
-

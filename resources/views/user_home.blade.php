@@ -27,7 +27,7 @@
                 <img src="https://nfinite.in/assets/images/nfinite_logo@1.5x.svg" alt="">
             </div>
             <div class="links">
-                <a href="#" class="login">{{$user->first_name}}</a>
+                <a href="#" class="login">{{$user['first_name']}}</a>
                 <a href="/logout" class="signup">Logout</a>
 
             </div>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="content">
-            <input type="hidden" value="{{$user->token}}">
+            <input type="hidden" value="{{$user['token']}}">
         </div>
 
     </body>
