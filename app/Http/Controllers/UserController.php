@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repository\UserRepo;
+use Exception;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -42,14 +43,16 @@ class UserController extends Controller
         $password = request('password');
         $phone = request('phone');
         $organization = request('organization');
-        $this->userObj->saveData($name, $emailId, $phone, $organization, $password);
-
-        return redirect('/')->with('message', 'User Registration successful');
+        try {
+            $this->userObj->saveData($name, $emailId, $phone, $organization, $password);
+            return redirect('/')->with('message', 'User Registration successful');
+        } catch (Exception $e) {
+            return view('error', ['error' => "Database connection failed"]);
+        }
     }
 
     public function details()
     {
         return view('details');
     }
-
 }
